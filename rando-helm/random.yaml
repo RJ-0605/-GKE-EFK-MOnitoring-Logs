@@ -1,0 +1,25 @@
+# Default values for rando.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: aransh/rando
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "latest"
+
+env:
+  interval: random # Interval between random logs gernerating (In seconds), set value to "random" for a random interval every time
+  count: random # Number of logs to generate each time, set value to "random" for a random logs count every time
+  maxNum: 50 # Maximum number to be generated for the logs themselves
+
+podAnnotations: {}
+
+resources: {}
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi

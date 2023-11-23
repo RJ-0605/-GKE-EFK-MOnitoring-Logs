@@ -1,0 +1,9 @@
+helm install kibana bitnami/kibana --set elasticsearch.enabled=false --set elasticsearch.external.hosts[0]=elasticsearch.default.svc.cluster.local --set elasticsearch.external.port=9200 --set service.type=LoadBalancer
+
+elasticsearch-coordinating-hl.default.svc.cluster.local
+
+
+helm upgrade --namespace default kibana my-repo/kibana \ --set elasticsearch.hosts[0]=elasticsearch-coordinating-hl.default.svc.cluster.local,elasticsearch.port=9200
+
+new service name
+elasticsearch-service.default.svc.cluster.local
